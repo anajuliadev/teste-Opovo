@@ -1,73 +1,298 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
+    <title>PLAYCUBE</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLAYCUBE</title>
+    <meta name="keywords">
+    <meta name="description" content="Filmes">
 
+    <link rel="icon" type="image/png" href="./materiais/imgs/favicon.png">
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="/script.js" defer></script>
+
 </head>
-<body>
-    <header class="bg-primary">    
+
+<body class="bg-body">
+    <header class="bg-primary d-flex align-items-center sticky-top">
         <div class="container">
-            <nav>
-                <ul>
-                    <a href="./"><img src="./materiais/imgs/logo-clara.png" alt="logomarca"></a>
-                    <a href="./">Filmes</a>
-                    <a href="./">Séries</a>
-                </ul>
-            </nav>
+            <div class="navbar navbar-dark">
+                <a class="navbar-brand " href="#"><img src="./materiais/imgs/logo-clara.png" alt="Logo PlayCube"></a>
+                <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <nav role="navigation" class="navbar d-none d-md-block">
+                    <ul class="d-flex align-items-center p-0 m-0 gap-3 list-unstyled">
+                        <li class="">
+                            <a class="text-white fs-4 fw-medium text-decoration-none" href="./">Filmes</a>
+                        </li>
+                        <li class="">
+                            <a class="text-white fs-4 fw-medium text-decoration-none" href="./">Séries</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <a class="navbar-brand " href="#"><img src="./materiais/imgs/logo-clara.png"
+                                alt="Logo PlayCube"></a>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <nav role="navigation" class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="text-white fs-4 fw-medium text-decoration-none" href="./">Filmes</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="text-white fs-4 fw-medium text-decoration-none" href="./">Séries</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </div>
     </header>
-    <div class="container">
 
-        <section class="sobre-filme">
-            <div class="cartaz">
-                <img src="" alt="">
+    <main role="main" class="sobre-filme">
+        <div class="container d-flex flex-column flex-md-row gap-3 ">
+            <div class="cartaz text-center">
+                <img id="capa" class="rounded-3" src="" alt="Cartaz do filme Interestelar">
             </div>
-            <div class="infomacao">
-                <div class="filme titulo">
-                    <p class="titulo">Coraline e o Mundo Secreto</p>
-                    <p class="lancamento">(2009)</p>
+            <div class="infomacao-filme">
+                <div class="d-flex justify-content-center justify-content-md-start">
+                    <h1 class="text-primary d-flex fs-1 fw-bold">
+                        <span id="titulo"></span>
+                        <span id="ano" class="text-yellow fs-1 fw-normal ps-2"></span>
+                    </h1>
                 </div>
-                <div class="filme genero">
-                    <p class="topico">Gênero:</p>
-                    <p class="descricao">Animação, Família, Fantasia</p>
+                <div>
+                    <p class="text-primary fs-4 fw-bold m-0">Gênero:</p>
+                    <p id="genero" class="fs-4 text-gray"></p>
                 </div>
-                <div class="filme sinopse">
-                    <p class="topico">Sinopse:</p>
-                    <p class="descricao">Entediada em sua nova casa, a pequena Coraline descobre uma porta secreta que contém um mundo parecido com o dela, porém melhor em muitas maneiras. Coraline se encanta com a descoberta, mas logo descobre que há algo de errado quando seus pais alternativos tentam mantê-la eternamente nesse mundo paralelo.</p>
+                <div>
+                    <p class="text-primary fs-4 fw-bold m-0" id="">Sinopse:</p>
+                    <p class="fs-4 text-gray" id="sinopse"></p>
                 </div>
-                <div class="filme direcao ">
-                    <p class="topico">Dirigido por:</p>
-                    <p class="descricao">Henry Selick</p>
-                </div>
-                <div class="filme escritor ">
-                    <p class="topico">Escrito por:</p>
-                    <p class="descricao">Henry Selick</p>
-                </div>
-                <div class="filme situacao ">
-                    <p class="topico">Situação:</p>
-                    <p class="descricao">Lançado</p>
-                </div>
-                <div class="filme idioma ">
-                    <p class="topico">Idioma original:</p>
-                    <p class="descricao">Inglês</p>
-                </div>
-                <div class="filme orcamento ">
-                    <p class="topico">Orçamento:</p>
-                    <p class="descricao">$60,000,000.00</p>
-                </div>
-                <div class="filme receita ">
-                    <p class="topico">Receita:</p>
-                    <p class="descricao">$185,860,104.00</p>
+                <div class="d-flex flex-column">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-primary fs-4 fw-bold m-0">Dirigido por:</p>
+                            <p class="fs-4 text-gray" id="direcao"></p>
+                        </div>
+                        <div class="col">
+                            <p class="text-primary fs-4 fw-bold m-0">Escrito por:</p>
+                            <p class="fs-4 text-gray" id="escritor"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-primary fs-4 fw-bold m-0">Situação:</p>
+                            <p class="fs-4 text-gray" id="situacao"></p>
+                        </div>
+                        <div class="col">
+                            <p class="text-primary fs-4 fw-bold m-0">Idioma original:</p>
+                            <p class="fs-4 text-gray" id="idioma"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-primary fs-5 fw-bold m-0">Orçamento:</p>
+                            <p class="fs-5 text-gray" id="orcamento"></p>
+                        </div>
+                        <div class="col">
+                            <p class="text-primary fs-5 fw-bold m-0">Receita:</p>
+                            <p class="fs-5 text-gray" id="receita"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-        <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
-  Example element with utilities
-</div>
-    </div>
+
+        </div>
+    </main>
+
+    <section class="bg-yellow-bege py-1">
+        <div class="container py-4">
+
+            <div class="d-flex align-items-center gap-3">
+                <p class="m-0 p-0 text-primary fw-bold fs-1">Elenco</p>
+                <button type="button" class="btn btn-primary rounded-pill px-4">Ver mais</button>
+            </div>
+            <div class="position-relative">
+                <div class="position-absolute top-0 start-0 h-100 w-5" style="z-index: 2;">
+                    <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-esquerda.png" alt="Fade">
+                </div>
+
+                <div class="position-absolute top-0 end-0 h-100 w-5" style="z-index: 2;">
+                    <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-direita.png" alt="Fade">
+                </div>
+                <div class="d-flex gap-3 overflow-auto position-relative" id="elenco">
+
+                    <div class="text-center">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+
+            <div class="d-flex align-items-center gap-3">
+                <p class="m-0 p-0 text-primary fw-bold fs-1">Resenhas</p>
+                <button type="button" class="btn btn-primary rounded-pill px-4">Ver mais</button>
+            </div>
+            <div class="d-flex gap-4 flex-column flex-md-row" id="resenhas">
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="pb-5">
+                <p class="m-0 p-0 text-primary fw-bold fs-1">Mídia</p>
+                <div class="d-flex align-items-center gap-3">
+                    <p class="m-0 p-0 text-primary fw-normal fs-1">Vídeos <span class="text-yellow">(8)</span></p>
+                    <button type="button" class="btn btn-primary rounded-pill px-4">Ver mais</button>
+                </div>
+                <div class="position-relative">
+                    <div class="d-block d-md-none position-absolute top-0 start-0 h-100 w-5" style="z-index: 2;">
+                        <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-esquerda.png" alt="Fade">
+                    </div>
+                    <div class="d-block d-md-none position-absolute top-0 end-0 h-100 w-5" style="z-index: 2;">
+                        <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-direita.png" alt="Fade">
+                    </div>
+                    <div class="d-flex horizontal-scroll" id="videos">
+
+                    </div>
+                </div>
+            </div>
+            <div class="pb-5">
+                <div class="d-flex align-items-center gap-3">
+                    <p class="m-0 p-0 text-primary fw-normal fs-1">Pôsteres <span class="text-yellow">(247)</span></p>
+                    <button type="button" class="btn btn-primary rounded-pill px-4">Ver mais</button>
+                </div>
+                <div class="position-relative">
+
+                    <div id="fade-left" class="d-block d-md-none position-absolute top-0 start-0 h-100 w-5"
+                        style="z-index: 2;">
+                        <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-esquerda.png" alt="Fade">
+                    </div>
+
+                    <div id="fade-right" class="d-block d-md-none position-absolute top-0 end-0 h-100 w-5"
+                        style="z-index: 2;">
+                        <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-direita.png" alt="Fade">
+                    </div>
+
+                    <div class="d-flex horizontal-scroll" id="posters">
+
+                    </div>
+                </div>
+            </div>
+            <div class="pb-5">
+                <div class="d-flex align-items-center gap-3">
+                    <p class="m-0 p-0 text-primary fw-normal fs-1">Imagens de fundo <span
+                            class="text-yellow">(33)</span></p>
+                    <button type="button" class="btn btn-primary rounded-pill px-4">Ver mais</button>
+                </div>
+
+                <div class="position-relative">
+                    <div class="d-block d-md-none position-absolute top-0 start-0 h-100 w-5" style="z-index: 2;">
+                        <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-esquerda.png" alt="Fade">
+                    </div>
+                    <div class="d-block d-md-none position-absolute top-0 end-0 h-100 w-5" style="z-index: 2;">
+                        <img class="h-100 d-block" src="./materiais/imgs/lateral-clara-direita.png" alt="Fade">
+                    </div>
+                    <div class="d-flex horizontal-scroll" id="fundo">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="bg-primary">
+        <div class="container pb-5 pt-3">
+
+            <div>
+                <p class="fs-1 fw-bold text-yellow-bege">Recomendações</p>
+            </div>
+            <div class="position-relative">
+                <div class="d-block d-md-none position-absolute top-0 start-0 h-100 w-5" style="z-index: 2;">
+                    <img class="h-100 d-block" src="./materiais/imgs/lateral-escura-esquerda.png" alt="Fade">
+                </div>
+                <div class="d-block d-md-none position-absolute top-0 end-0 h-100 w-5" style="z-index: 2;">
+                    <img class="h-100 d-block" src="./materiais/imgs/lateral-escura-direita.png" alt="Fade">
+                </div>
+                <div class="d-flex horizontal-scroll" id="recomendacoes">
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="container d-flex py-5">
+            <div class="row gap-4 gap-md-0">
+                <div class="col-12 col-md-4 logomarca">
+                    <img src="./materiais/imgs/logo-escura.png" alt="Logo da PlayCube">
+                </div>
+
+                <nav role="navigation" class="col-12 col-md-8">
+                    <ul class="row row-cols-1 row-cols-sm-2 row-cols-md-3 list-unstyled">
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Sobre</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Contato</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Suporte</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Adicione um Filme</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Adicione uma Série</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Discussões</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Termo de uso</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Política de Privacidade</a>
+                        </li>
+                        <li>
+                            <a class="text-primary fs-4 text-decoration-none" href="./">Diretrizes</a>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
