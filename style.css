@@ -386,6 +386,12 @@ nav ul img {
     }
 }
 
+@media (max-width: 575.98px) {
+    .btn {
+        --bs-btn-font-size: 1rem !important;
+    }
+}
+
 .resenha-truncate {
     display: -webkit-box;
     -webkit-box-orient: vertical;
