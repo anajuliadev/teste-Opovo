@@ -390,6 +390,11 @@ nav ul img {
     .btn {
         --bs-btn-font-size: 1rem !important;
     }
+
+    .cartaz img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .resenha-truncate {
