@@ -107,7 +107,7 @@ async function imagesFilme() {
         for (let i = 0; i < 6; i++) {
             const avaliacao = Math.round(filme.results[i].vote_average / 10 * 100) + "%";
 
-            document.getElementById('recomendacoes').innerHTML += "<div class='filme'><div class='ratio aspect-poster'><img class='rounded-3 recomendacoes w-100 h-100' src='https://image.tmdb.org/t/p/original" + filme.results[i].backdrop_path + " alt='Capa de outros filmes'></div><p class='fw-semibold fs-4 text-yellow-bege p-0 m-0'>" + filme.results[i].title + "</p><p class='fw-normal fs-4 text-yellow-bege p-0 m-0'>" + avaliacao + "</p></div>";
+            document.getElementById('recomendacoes').innerHTML += "<div class='d-flex flex-column text-center'><img class='rounded-3 recomendacoes-img' src='https://image.tmdb.org/t/p/original" + filme.results[i].backdrop_path + " alt='Poster de " + filme.results[i].title + "'><p class='fw-semibold fs-4 text-yellow-bege p-0 m-0'>" + filme.results[i].title + "</p><p class='fw-normal fs-4 text-yellow-bege p-0 m-0'>" + avaliacao + "</p></div>";
 
         }
     });
