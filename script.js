@@ -4,7 +4,7 @@ const linguagem = "pt-BR";
 
 const url = "https://api.themoviedb.org/3/movie/" + id_filme + "?api_key=" + apiKey + "&language=" + linguagem;
 const urlPorters = "https://api.themoviedb.org/3/movie/" + id_filme + "/images" + "?api_key=" + apiKey;
-const urlRecomendacoes = "https://api.themoviedb.org/3/movie/" + id_filme + "/recommendations" + "?api_key=" + apiKey;
+const urlRecomendacoes = "https://api.themoviedb.org/3/movie/" + id_filme + "/recommendations" + "?api_key=" + apiKey + "&language=" + linguagem;
 const urlResenhas = "https://api.themoviedb.org/3/movie/" + id_filme + "/reviews" + "?api_key=" + apiKey + "&language=" + linguagem;
 const urlVideos = "https://api.themoviedb.org/3/movie/" + id_filme + "/videos" + "?api_key=" + apiKey + "&language=" + linguagem;
 const urlElenco = "https://api.themoviedb.org/3/movie/" + id_filme + "/credits" + "?api_key=" + apiKey + "&language=" + linguagem;
@@ -13,7 +13,7 @@ const urlElenco = "https://api.themoviedb.org/3/movie/" + id_filme + "/credits" 
 async function buscarApi(url) {
     const respostaApi = await fetch(url);
     let json = await respostaApi.json();
-    console.log(json);
+    
 
     return json;
 };
