@@ -53,11 +53,17 @@ async function imagesFilme() {
     buscarApi(urlPorters).then((filme) => {
 
         for (let i = 0; i < 4; i++) {
-            document.getElementById('posters').innerHTML += "<div><img class='rounded-3 posters-img h-100 w-100' id='poster' src='https://image.tmdb.org/t/p/original" + filme.posters[i].file_path + " alt='Posteres do filme'></div>";
+            document.getElementById('posters').innerHTML +=
+                "<div>" +
+                "<img class='rounded-3 posters-img h-100 w-100' src='https://image.tmdb.org/t/p/original" + filme.posters[i].file_path + "' alt='Pôster do filme " + (i + 1) + "'>" +
+                "</div>";
         }
 
         for (let i = 0; i < 2; i++) {
-            document.getElementById('fundo').innerHTML += "<div><img class='rounded-3 imagens-fundo-img h-100 w-100' id='fundo' src='https://image.tmdb.org/t/p/original" + filme.backdrops[i].file_path + " alt='Imagens do filme'></div";
+            document.getElementById('fundo').innerHTML +=
+                "<div>" +
+                "<img class='rounded-3 imagens-fundo-img h-100 w-100' src='https://image.tmdb.org/t/p/original" + filme.backdrops[i].file_path + "' alt='Imagem de fundo " + (i + 1) + "'>" +
+                "</div>";
         }
 
     });
@@ -80,7 +86,12 @@ async function imagesFilme() {
 
 
         for (let i = 0; i < 10; i++) {
-            document.getElementById('elenco').innerHTML += "<div class='text-center'><img class='elenco-img rounded-circle' src='https://image.tmdb.org/t/p/original" + filme.cast[i].profile_path + " alt='Foto do elenco'>" + "<p class=' pt-3 m-0 text-gray fs-4 fw-bold'>" + filme.cast[i].name + "</p><p class='p-0 m-0 text-gray fs-4'>" + filme.cast[i].character + "</p></div>";
+            document.getElementById('elenco').innerHTML +=
+                "<div class='text-center'>" +
+                "<img class='elenco-img rounded-circle' src='https://image.tmdb.org/t/p/original" + filme.cast[i].profile_path + "' alt='Foto de " + filme.cast[i].name + "'>" +
+                "<p class='pt-3 m-0 text-gray fs-4 fw-bold'>" + filme.cast[i].name + "</p>" +
+                "<p class='p-0 m-0 text-gray fs-4'>" + filme.cast[i].character + "</p>" +
+                "</div>";
 
         }
     });
@@ -90,7 +101,15 @@ async function imagesFilme() {
             const data = new Date(filme.results[i].updated_at);
             const dataFormatada = data.toLocaleDateString('pt-BR');
 
-            document.getElementById('resenhas').innerHTML += "<div class='col d-flex flex-column col bg-yellow-bege rounded-3 p-4 ' id='resenhas'>" + "<p class='fs-4 lh-1 resenha-truncate flex-grow-1'>" + filme.results[i].content + "</p>" + "<div class='d-flex flex-column justify-content-between'><p class='fs-4 m-0'>por <strong class='text-primary'>" + filme.results[i].author + "</strong></p>" + "" + "<div class='d-flex justify-content-between'><p class='fs-4 d-flex m-0'>" + dataFormatada + "<p class='fs-4 m-0'>Nota: " + "<strong class='text-primary'>" + filme.results[i].author_details.rating + "</strong>/10</p></div>" + "</div></div>";
+            document.getElementById('resenhas').innerHTML +=
+                "<div class='col d-flex flex-column col bg-yellow-bege rounded-3 p-4 ' id='resenhas'>" +
+                "<p class='fs-4 lh-1 resenha-truncate flex-grow-1'>" + filme.results[i].content + "</p>" +
+                "<div class='d-flex flex-column justify-content-between'><p class='fs-4 m-0'>por <strong class='text-primary'>" + filme.results[i].author + "</strong></p>" + "" +
+                "<div class='d-flex justify-content-between'><p class='fs-4 d-flex m-0'>" + dataFormatada +
+                "<p class='fs-4 m-0'>Nota: " +
+                "<strong class='text-primary'>" + filme.results[i].author_details.rating + "</strong>/10</p></div>" +
+                "</div>" +
+                "</div>";
 
         }
 
@@ -107,7 +126,7 @@ async function imagesFilme() {
         for (let i = 0; i < 6; i++) {
             const avaliacao = Math.round(filme.results[i].vote_average / 10 * 100) + "%";
 
-            document.getElementById('recomendacoes').innerHTML += "<div class='d-flex flex-column text-center'><img class='rounded-3 recomendacoes-img' src='https://image.tmdb.org/t/p/original" + filme.results[i].backdrop_path + " alt='Poster de " + filme.results[i].title + "'><p class='fw-semibold fs-4 text-yellow-bege p-0 m-0'>" + filme.results[i].title + "</p><p class='fw-normal fs-4 text-yellow-bege p-0 m-0'>" + avaliacao + "</p></div>";
+            document.getElementById('recomendacoes').innerHTML += "<div class='d-flex flex-column text-center'><img class='rounded-3 recomendacoes-img' src='https://image.tmdb.org/t/p/original" + filme.results[i].backdrop_path + "' alt='Poster de " + filme.results[i].title + "'><p class='fw-semibold fs-4 text-yellow-bege p-0 m-0'>" + filme.results[i].title + "</p><p class='fw-normal fs-4 text-yellow-bege p-0 m-0'>" + avaliacao + "</p></div>";
 
         }
     });
