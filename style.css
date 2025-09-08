@@ -148,6 +148,8 @@ nav ul img {
 }
 
 #elenco {
+    display: flex;
+    gap: 1.5rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 1rem;
@@ -165,34 +167,14 @@ nav ul img {
     max-width: 190px;
     height: 190px;
     object-fit: cover;
-    border-radius: 8px;
-}
-
-@media (min-width: 992px) {
-    #elenco {
-        overflow-x: visible;
-        flex-wrap: wrap;
-        gap: 0;
-        padding-bottom: 0;
-        justify-content: space-between;
-    }
-
-    #elenco>div {
-        flex: 0 0 23%;
-        max-width: 23%;
-        scroll-snap-align: unset;
-    }
-
-    .elenco-img {
-        min-width: 0;
-        max-width: 100%;
-    }
+    border-radius: 50%;
 }
 
 @media (max-width: 991.98px) {
     #elenco {
         overflow-x: auto;
         flex-wrap: nowrap;
+        gap: 1.5rem;
         padding-bottom: 1rem;
     }
 

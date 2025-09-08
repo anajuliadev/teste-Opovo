@@ -80,7 +80,7 @@ async function imagesFilme() {
 
 
         for (let i = 0; i < 10; i++) {
-            document.getElementById('elenco').innerHTML += "<div class='text-center'><img class='elenco-img item current-item rounded-circle' src='https://image.tmdb.org/t/p/original" + filme.cast[i].profile_path + "alt='Foto do elenco'>" + "<p class=' pt-3 m-0 text-gray fs-4 fw-bold'>" + filme.cast[i].name + "</p><p class='p-0 m-0 text-gray fs-4'>" + filme.cast[i].character + "</p></div>";
+            document.getElementById('elenco').innerHTML += "<div class='text-center'><img class='elenco-img rounded-circle' src='https://image.tmdb.org/t/p/original" + filme.cast[i].profile_path + " alt='Foto do elenco'>" + "<p class=' pt-3 m-0 text-gray fs-4 fw-bold'>" + filme.cast[i].name + "</p><p class='p-0 m-0 text-gray fs-4'>" + filme.cast[i].character + "</p></div>";
 
         }
     });
